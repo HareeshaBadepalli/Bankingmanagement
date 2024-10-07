@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>Welcome, <span th:text="${fullName}">User</span></h1>
+    
+    <h2>Account Options</h2>
+    <form th:action="@{/credit}" method="post">
+        <label>Amount:</label>
+        <input type="number" name="amount" required/>
+        <label>Pin:</label>
+        <input type="password" name="securityPin" required/>
+        <button type="submit">Credit Money</button>
+    </form>
+
+    <form th:action="@{/debit}" method="post">
+        <label>Amount:</label>
+        <input type="number" name="amount" required/>
+        <label>Pin:</label>
+        <input type="password" name="securityPin" required/>
+        <button type="submit">Debit Money</button>
+    </form>
+
+    <form th:action="@{/transfer}" method="post">
+        <label>Receiver Account Number:</label>
+        <input type="text" name="receiverAccount" required/>
+        <label>Amount:</label>
+        <input type="number" name="amount" required/>
+        <label>Pin:</label>
+        <input type="password" name="securityPin" required/>
+        <button type="submit">Transfer Money</button>
+    </form>
+
+    <form th:action="@{/check-balance}" method="get">
+        <button type="submit">Check Balance</button>
+    </form>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+
+</body>
+</html>
